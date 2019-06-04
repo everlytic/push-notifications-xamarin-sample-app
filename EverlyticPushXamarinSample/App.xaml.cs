@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Com.EverlyticPush;
 
 namespace EverlyticPushXamarinSample
 {
@@ -11,6 +12,13 @@ namespace EverlyticPushXamarinSample
             InitializeComponent();
 
             MainPage = new MainPage();
+
+            // Copy and paste your Everlytic push notification configuration 
+            // string into the parameter below.
+
+            Everlytic.Instance
+                //.SetTestMode(true) // Optional. This prevents HTTP calls to Everlytic, for test purposes only.
+                .Initialize("<your configuration here>");
         }
 
         protected override void OnStart()
